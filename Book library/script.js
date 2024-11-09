@@ -1,8 +1,7 @@
-// Sample data
+
 let books = [];
 let borrowHistory = [];
 
-// Function to add a book
 function addBook() {
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
@@ -16,7 +15,6 @@ function addBook() {
     }
 }
 
-// Function to display books
 function displayBooks() {
     const bookCollection = document.getElementById('book-collection');
     bookCollection.innerHTML = '';
@@ -39,14 +37,12 @@ function displayBooks() {
     });
 }
 
-// Function to clear input fields
 function clearInputs() {
     document.getElementById('title').value = '';
     document.getElementById('author').value = '';
     document.getElementById('category').value = '';
 }
 
-// Function to search books
 function searchBooks() {
     const searchValue = document.getElementById('search').value.toLowerCase();
     const filteredBooks = books.filter(book => 
@@ -57,7 +53,6 @@ function searchBooks() {
     displayFilteredBooks(filteredBooks);
 }
 
-// Function to display filtered books
 function displayFilteredBooks(filteredBooks) {
     const bookCollection = document.getElementById('book-collection');
     bookCollection.innerHTML = '';
@@ -80,7 +75,6 @@ function displayFilteredBooks(filteredBooks) {
     });
 }
 
-// Function to borrow/return a book
 function borrowBook(index) {
     const book = books[index];
 
@@ -96,7 +90,6 @@ function borrowBook(index) {
     displayHistory();
 }
 
-// Function to display borrow history
 function displayHistory() {
     const historySection = document.getElementById('borrow-history');
     historySection.innerHTML = '';
@@ -109,5 +102,4 @@ function displayHistory() {
     });
 }
 
-// Initial display
 displayBooks();
